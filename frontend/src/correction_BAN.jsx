@@ -11,7 +11,7 @@ let upload = multer({
 });
 
 app.use(cookieParser()); // 2
-app.use(cors({ credentials: true, origin: "http://localhost:3000" })); /* 3 */
+app.use(cors({ credentials: true, origin: "http://159.89.112.34" })); /* 3 */
 
 let passwords = { admin: "pwd123" }; // 5
 let sessions = {}; // 6
@@ -98,7 +98,7 @@ app.post("/newmessage", upload.single("image"), (req, res) => {
   let newMsg = { username: username, message: msg }; // 24
 
   if (req.file) {
-    newMsg.imgPath = "http://localhost:4000/images/" + req.file.filename;
+    newMsg.imgPath = "http://159.89.112.34:4000/images/" + req.file.filename;
   }
 
   console.log("new message", newMsg); // 24
@@ -189,7 +189,7 @@ class UnconnectedChatForm extends Component {
     if (this.state.fileLocation !== undefined)
       data.append("image", this.state.fileLocation); // 2
 
-    fetch("http://localhost:4000/newmessage", {
+    fetch("http://159.89.112.34:4000/newmessage", {
       /* 2 */
       method: "POST", // 2
       body: data, // 2

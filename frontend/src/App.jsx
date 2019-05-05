@@ -10,7 +10,7 @@ import Admin from "./Admin.jsx";
 
 class UnconnectedApp extends Component {
   componentDidMount = () => {
-    fetch("http://localhost:4000/already", {
+    fetch("http://159.89.112.34:4000/already", {
       credentials: "include"
     })
       .then(response => {

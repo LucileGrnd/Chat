@@ -7,7 +7,7 @@ class UnconnectedDelete extends Component {
   }
 
   handleOnClick = () => {
-    fetch("http://localhost:4000/delete", {
+    fetch("http://159.89.112.34:4000/delete", {
       credentials: "include"
     });
   };

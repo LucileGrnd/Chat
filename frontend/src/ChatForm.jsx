@@ -26,7 +26,7 @@ class ChatForm extends Component {
     let data = new FormData();
     data.append("msg", this.state.message);
     data.append("file", this.state.file);
-    fetch("http://localhost:4000/newmessage", {
+    fetch("http://159.89.112.34:4000/newmessage", {
       method: "POST",
       body: data,
       credentials: "include"

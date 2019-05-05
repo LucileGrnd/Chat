@@ -26,7 +26,7 @@ class UnconnectedLogin extends Component {
     let data = new FormData();
     data.append("username", this.state.username);
     data.append("password", this.state.password);
-    fetch("http://localhost:4000/login", {
+    fetch("http://159.89.112.34:4000/login", {
       method: "POST",
       body: data,
       credentials: "include"

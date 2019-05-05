@@ -14,7 +14,7 @@ let generateId = () => {
 };
 
 app.use(cookieParser());
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({ credentials: true, origin: "http://159.89.112.34" }));
 app.use("/images", express.static("uploads"));
 
 app.get("/messages", (req, res) => {
@@ -142,7 +142,7 @@ app.post("/newmessage", upload.single("file"), (req, res) => {
   // on s occupe de l'image:
   let file = req.file;
   if (file !== undefined) {
-    let frontendPath = "http://localhost:4000/images/" + file.filename;
+    let frontendPath = "http://159.89.112.34:4000/images/" + file.filename;
     console.log("path for image=>", frontendPath);
     let newMsg = {
       username: username,
@@ -173,7 +173,4 @@ app.post("/logout", upload.none(), (req, res) => {
 });
 
 let port = 4000;
-
-app.listen(port, () => {
-  console.log("The server is launched on:", port);
-});
+app.listen(port, "0.0.0.0", console.log("the server is launched!"));

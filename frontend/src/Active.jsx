@@ -11,7 +11,7 @@ class UnconnectedActive extends Component {
 
   componentDidMount = () => {
     let updater = () => {
-      fetch("http://localhost:4000/active", {
+      fetch("http://159.89.112.34:4000/active", {
         credentials: "include"
       })
         .then(response => {

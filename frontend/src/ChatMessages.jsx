@@ -5,7 +5,7 @@ import moment from "moment";
 class UnconnectedChatMessages extends Component {
   componentDidMount = () => {
     let updater = () => {
-      fetch("http://localhost:4000/messages", {
+      fetch("http://159.89.112.34:4000/messages", {
         credentials: "include"
       })
         .then(response => {

@@ -25,7 +25,7 @@ class UnconnectedSignup extends Component {
     let data = new FormData();
     data.append("username", this.state.username);
     data.append("password", this.state.password);
-    fetch("http://localhost:4000/signup", {
+    fetch("http://159.89.112.34:4000/signup", {
       method: "POST",
       body: data,
       credentials: "include"
@@ -40,7 +40,7 @@ class UnconnectedSignup extends Component {
           return;
         }
         alert("Signup succeeded");
-        return fetch("http://localhost:4000/login", {
+        return fetch("http://159.89.112.34:4000/login", {
           method: "POST",
           body: data,
           credentials: "include"
