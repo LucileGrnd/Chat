@@ -4,6 +4,7 @@ let multer = require("multer");
 let upload = multer({ dest: __dirname + "/uploads" });
 let cors = require("cors");
 let cookieParser = require("cookie-parser");
+let bodyParser = require("body-parser");
 let passwords = { Marie: "123" };
 let messages = [];
 let sessions = {};
@@ -16,6 +17,7 @@ let generateId = () => {
 app.use(cookieParser());
 app.use(cors({ credentials: true, origin: "http://159.89.112.34" }));
 app.use("/images", express.static("uploads"));
+app.use(bodyParser.raw({ type: "*/*" }));
 
 app.get("/messages", (req, res) => {
   let Id = req.cookies.sid;
